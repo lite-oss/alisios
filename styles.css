@@ -10,13 +10,15 @@
 }
 
 :root {
-  --bg:           #F5ECD3;
-  --bg-section:   #EDE0C4;
-  --bg-card:      #E8D9B8;
+  --bg:           #FAF6F0;
+  --bg-section:   #F0EBE2;
+  --bg-card:      #E8DFD2;
   --blue:         #0458A3;
-  --dark:         #16201A;
-  --text:         #1A1A1A;
-  --text-muted:   #5A5A5A;
+  --blue2:        #3A91CF;
+  --orange:       #E6A755;
+  --dark:         #282B2D;
+  --text:         #282B2D;
+  --text-muted:   #71747A;
   --white:        #FFFFFF;
 
   --font-serif:   'Philosopher', Georgia, 'Times New Roman', serif;
@@ -226,9 +228,9 @@ img {
   width: 100%;
   height: 100%;
   background:
-    radial-gradient(ellipse at 35% 65%, rgba(200, 155, 90, 0.9) 0%, transparent 55%),
-    radial-gradient(ellipse at 70% 40%, rgba(170, 120, 55, 0.7) 0%, transparent 50%),
-    linear-gradient(145deg, #C9A060 0%, #A07840 30%, #7A5828 60%, #5D3E18 100%);
+    radial-gradient(ellipse at 35% 65%, rgba(230, 167, 85, 0.85) 0%, transparent 55%),
+    radial-gradient(ellipse at 70% 35%, rgba(58, 145, 207, 0.5) 0%, transparent 50%),
+    linear-gradient(145deg, #E6A755 0%, #C8863A 35%, #A06828 65%, #7A4E18 100%);
 }
 
 
@@ -277,8 +279,8 @@ img {
   height: 360px;
   border-radius: var(--radius);
   background:
-    radial-gradient(ellipse at 40% 35%, rgba(130, 90, 50, 0.8) 0%, transparent 55%),
-    linear-gradient(145deg, #A07848 0%, #7D5830 40%, #5C3E1A 100%);
+    radial-gradient(ellipse at 40% 35%, rgba(230, 167, 85, 0.75) 0%, transparent 55%),
+    linear-gradient(145deg, #E6A755 0%, #C07830 40%, #8A5218 100%);
   box-shadow: 0 8px 30px rgba(0,0,0,0.15);
 }
 
@@ -425,8 +427,8 @@ img {
   height: 520px;
   border-radius: var(--radius);
   background:
-    radial-gradient(ellipse at 50% 40%, rgba(80, 140, 60, 0.8) 0%, transparent 60%),
-    linear-gradient(145deg, #4A8A3A 0%, #2E6020 40%, #1A4010 70%, #2A5A1A 100%);
+    radial-gradient(ellipse at 50% 40%, rgba(58, 145, 207, 0.6) 0%, transparent 60%),
+    linear-gradient(145deg, #3A91CF 0%, #0458A3 45%, #023D7A 100%);
   overflow: hidden;
   box-shadow: 0 10px 40px rgba(0,0,0,0.15);
 }
@@ -459,14 +461,14 @@ img {
 .eco-badge-eu {
   font-size: 20px;
   font-weight: 900;
-  color: #003399;
+  color: var(--blue);
   line-height: 1;
 }
 
 .eco-badge-organic {
   font-size: 8px;
   font-weight: 700;
-  color: #2D6A2D;
+  color: var(--blue2);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-top: 2px;
@@ -477,7 +479,7 @@ img {
    QUOTE
    ============================================================ */
 .section-quote {
-  background-color: #1A2A1E;
+  background-color: var(--dark);
   padding: 80px 0;
 }
 
@@ -528,14 +530,14 @@ img {
 
 .lagrana-photo {
   background:
-    radial-gradient(ellipse at 45% 55%, rgba(195, 155, 90, 0.85) 0%, transparent 55%),
-    linear-gradient(145deg, #C0924A 0%, #A07030 40%, #7A5018 70%, #5A3A08 100%);
+    radial-gradient(ellipse at 45% 55%, rgba(230, 167, 85, 0.85) 0%, transparent 55%),
+    linear-gradient(145deg, #E6A755 0%, #C07830 40%, #8A5218 70%, #5A3208 100%);
 }
 
 .goodbio-photo {
   background:
-    radial-gradient(ellipse at 55% 45%, rgba(240, 185, 60, 0.9) 0%, transparent 55%),
-    linear-gradient(145deg, #E8B840 0%, #C89020 40%, #A07010 70%, #7A5200 100%);
+    radial-gradient(ellipse at 55% 45%, rgba(58, 145, 207, 0.7) 0%, transparent 55%),
+    linear-gradient(145deg, #3A91CF 0%, #0458A3 45%, #023D7A 100%);
 }
 
 .marca-content {
@@ -665,7 +667,7 @@ img {
    FOOTER
    ============================================================ */
 .footer {
-  background-color: #16201A;
+  background-color: var(--dark);
   color: var(--white);
   padding-top: 64px;
 }
