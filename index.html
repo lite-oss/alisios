@@ -30,7 +30,10 @@
         </svg>
         <span class="logo-text">alisios</span>
       </a>
-      <nav aria-label="Navegación principal">
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav" aria-label="Navegación principal">
         <ul class="nav-links">
           <li><a href="#que-hacemos">Qué hacemos</a></li>
           <li><a href="#marcas">Nuestras marcas</a></li>
@@ -358,5 +361,28 @@
     </div>
   </footer>
 
+  <script>
+    // Sticky header
+    const header = document.querySelector('.header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('main-nav');
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('nav-open', !open);
+    });
+    // Close nav on link click
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        toggle.setAttribute('aria-expanded', 'false');
+        nav.classList.remove('nav-open');
+      });
+    });
+  </script>
 </body>
 </html>
