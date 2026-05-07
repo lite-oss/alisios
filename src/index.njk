@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PASS-A — Pan African for Studies and Strategies Advisory</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 340 85" xmlns="http://www.w3.org/2000/svg" style="height:42px;width:auto;">
+      <defs><linearGradient id="lgnav" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#e9cd79"/><stop offset="55%" stop-color="#c8a84b"/><stop offset="100%" stop-color="#997f44"/></linearGradient></defs>
+      <text x="4" y="58" font-family="Georgia,serif" font-size="64" font-weight="700" fill="#e8f0f7" letter-spacing="-1"><tspan>PASS</tspan><tspan dx="6">-</tspan></text>
+      <text x="220" y="58" font-family="Georgia,serif" font-size="64" font-weight="700" fill="url(#lgnav)" letter-spacing="-1">A</text>
+      <text x="4" y="76" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,0.4)" textLength="266" lengthAdjust="spacing">PAN AFRICAN FOR STUDIES AND STRATEGIES ADVISORY</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a class="nav-link" href="#sobre" data-i18n="nav_sobre">{{ lang.es.nav_sobre }}</a></li>
+    <li><a class="nav-link" href="#areas" data-i18n="nav_areas">{{ lang.es.nav_areas }}</a></li>
+    <li><a class="nav-link" href="#colabora" data-i18n="nav_colabora">{{ lang.es.nav_colabora }}</a></li>
+    <li><a class="nav-link" href="#contacto" data-i18n="nav_contacto">{{ lang.es.nav_contacto }}</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:16px;">
+    <div class="nav-lang">
+      <button class="lang-btn active" data-lang="es">ES</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="fr">FR</button>
+    </div>
+    <button class="nav-cta" onclick="openModal('intelectual')">
+      <span data-i18n="nav_cta">{{ lang.es.nav_cta }}</span>
+    </button>
+  </div>
+  <div class="hamburger" id="hamburger" onclick="openDrawer()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- DRAWER MÓVIL -->
+<div class="drawer-ov" id="drawerOv" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <button class="drawer-x" onclick="closeDrawer()">✕</button>
+  <a class="drawer-link" href="#sobre" onclick="closeDrawer()" data-i18n="nav_sobre">{{ lang.es.nav_sobre }}</a>
+  <a class="drawer-link" href="#areas" onclick="closeDrawer()" data-i18n="nav_areas">{{ lang.es.nav_areas }}</a>
+  <a class="drawer-link" href="#colabora" onclick="closeDrawer()" data-i18n="nav_colabora">{{ lang.es.nav_colabora }}</a>
+  <a class="drawer-link" href="#contacto" onclick="closeDrawer()" data-i18n="nav_contacto">{{ lang.es.nav_contacto }}</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-line"></div>
+
+  <div class="hero-inner hero-inner--split">
+
+    <div class="hero-text">
+      <div class="hero-eyebrow" data-i18n="hero_eyebrow">{{ lang.es.hero_eyebrow }}</div>
+      <h1 class="hero-title" data-i18n="hero_title">{{ lang.es.hero_title | safe }}</h1>
+      <p class="hero-lead" data-i18n="hero_lead">{{ lang.es.hero_lead }}</p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="openModal('intelectual')">
+          <span data-i18n="hero_btn1">{{ lang.es.hero_btn1 }}</span> <span class="arr">→</span>
+        </button>
+        <a href="#sobre" class="btn-secondary">
+          <span data-i18n="hero_btn2">{{ lang.es.hero_btn2 }}</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-illustration" aria-hidden="true">
+      <svg viewBox="0 0 520 560" xmlns="http://www.w3.org/2000/svg" class="network-svg">
+        <defs>
+          <radialGradient id="glow-a" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="#e9cd79" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#e9cd79" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="glow-b" cx="50%" cy="50%" r="50%">
+            <stop offset="0%"   stop-color="#c8a84b" stop-opacity="0.25"/>
+            <stop offset="100%" stop-color="#c8a84b" stop-opacity="0"/>
+          </radialGradient>
+          <filter id="blur-soft">
+            <feGaussianBlur stdDeviation="3"/>
+          </filter>
+          <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%"   stop-color="#e9cd79" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#c8a84b" stop-opacity="0.15"/>
+          </linearGradient>
+          <linearGradient id="line-grad-2" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%"   stop-color="#c8a84b" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#e9cd79" stop-opacity="0.1"/>
+          </linearGradient>
+        </defs>
+        <line x1="260" y1="280" x2="110" y2="140" stroke="url(#line-grad)"   stroke-width="1.2" class="net-line"/>
+        <line x1="260" y1="280" x2="390" y2="120" stroke="url(#line-grad-2)" stroke-width="1.2" class="net-line"/>
+        <line x1="260" y1="280" x2="440" y2="290" stroke="url(#line-grad)"   stroke-width="1.0" class="net-line"/>
+        <line x1="260" y1="280" x2="370" y2="430" stroke="url(#line-grad-2)" stroke-width="1.2" class="net-line"/>
+        <line x1="260" y1="280" x2="130" y2="400" stroke="url(#line-grad)"   stroke-width="1.0" class="net-line"/>
+        <line x1="260" y1="280" x2="80"  y2="290" stroke="url(#line-grad-2)" stroke-width="0.9" class="net-line"/>
+        <line x1="260" y1="280" x2="200" y2="80"  stroke="url(#line-grad)"   stroke-width="1.0" class="net-line"/>
+        <line x1="260" y1="280" x2="310" y2="490" stroke="url(#line-grad-2)" stroke-width="0.8" class="net-line"/>
+        <line x1="110" y1="140" x2="200" y2="80"  stroke="#c8a84b" stroke-width="0.7" stroke-opacity="0.3" class="net-line"/>
+        <line x1="200" y1="80"  x2="390" y2="120" stroke="#c8a84b" stroke-width="0.7" stroke-opacity="0.3" class="net-line"/>
+        <line x1="390" y1="120" x2="440" y2="290" stroke="#c8a84b" stroke-width="0.7" stroke-opacity="0.25" class="net-line"/>
+        <line x1="440" y1="290" x2="370" y2="430" stroke="#c8a84b" stroke-width="0.7" stroke-opacity="0.25" class="net-line"/>
+        <line x1="370" y1="430" x2="310" y2="490" stroke="#c8a84b" stroke-width="0.7" stroke-opacity="0.2" class="net-line"/>
+        <line x1="130" y1="400" x2="310" y2="490" stroke="#c8a84b" stroke-width="0.7" stroke-opacity="0.2" class="net-line"/>
+        <line x1="80"  y1="290" x2="130" y2="400" stroke="#c8a84b" stroke-width="0.7" stroke-opacity="0.25" class="net-line"/>
+        <line x1="80"  y1="290" x2="110" y2="140" stroke="#c8a84b" stroke-width="0.7" stroke-opacity="0.2" class="net-line"/>
+        <line x1="110" y1="140" x2="60"  y2="190" stroke="#e9cd79" stroke-width="0.5" stroke-opacity="0.2"/>
+        <line x1="390" y1="120" x2="460" y2="80"  stroke="#e9cd79" stroke-width="0.5" stroke-opacity="0.2"/>
+        <line x1="440" y1="290" x2="500" y2="360" stroke="#e9cd79" stroke-width="0.5" stroke-opacity="0.18"/>
+        <line x1="200" y1="80"  x2="260" y2="30"  stroke="#e9cd79" stroke-width="0.5" stroke-opacity="0.2"/>
+        <circle cx="260" cy="280" r="52" fill="url(#glow-a)" filter="url(#blur-soft)"/>
+        <circle cx="110" cy="140" r="28" fill="url(#glow-b)" filter="url(#blur-soft)"/>
+        <circle cx="390" cy="120" r="24" fill="url(#glow-b)" filter="url(#blur-soft)"/>
+        <circle cx="440" cy="290" r="22" fill="url(#glow-b)" filter="url(#blur-soft)"/>
+        <circle cx="260" cy="280" r="34" fill="none" stroke="#e9cd79" stroke-width="1" stroke-opacity="0.15" class="pulse-ring pulse-ring--1"/>
+        <circle cx="260" cy="280" r="34" fill="none" stroke="#e9cd79" stroke-width="1" stroke-opacity="0.1"  class="pulse-ring pulse-ring--2"/>
+        <circle cx="260" cy="280" r="18" fill="#081f32" stroke="#e9cd79" stroke-width="1.8"/>
+        <circle cx="260" cy="280" r="9"  fill="#e9cd79"/>
+        <text x="260" y="313" text-anchor="middle" font-family="Georgia,serif" font-size="9" fill="#e9cd79" fill-opacity="0.7" letter-spacing="2">PASS-A</text>
+        <circle cx="110" cy="140" r="13" fill="#081f32" stroke="#c8a84b" stroke-width="1.5" class="net-node"/>
+        <circle cx="110" cy="140" r="5.5" fill="#c8a84b" class="net-node"/>
+        <circle cx="390" cy="120" r="11" fill="#081f32" stroke="#c8a84b" stroke-width="1.5" class="net-node"/>
+        <circle cx="390" cy="120" r="4.5" fill="#c8a84b" class="net-node"/>
+        <circle cx="440" cy="290" r="10" fill="#081f32" stroke="#c8a84b" stroke-width="1.2" class="net-node"/>
+        <circle cx="440" cy="290" r="4"  fill="#c8a84b" class="net-node"/>
+        <circle cx="370" cy="430" r="9"  fill="#081f32" stroke="#c8a84b" stroke-width="1.2" class="net-node"/>
+        <circle cx="370" cy="430" r="3.5" fill="#c8a84b" class="net-node"/>
+        <circle cx="130" cy="400" r="9"  fill="#081f32" stroke="#c8a84b" stroke-width="1.2" class="net-node"/>
+        <circle cx="130" cy="400" r="3.5" fill="#c8a84b" class="net-node"/>
+        <circle cx="80"  cy="290" r="7.5" fill="#081f32" stroke="#c8a84b" stroke-width="1.0" class="net-node"/>
+        <circle cx="80"  cy="290" r="3"   fill="#c8a84b" class="net-node"/>
+        <circle cx="200" cy="80"  r="9"  fill="#081f32" stroke="#c8a84b" stroke-width="1.2" class="net-node"/>
+        <circle cx="200" cy="80"  r="3.5" fill="#c8a84b" class="net-node"/>
+        <circle cx="310" cy="490" r="7"  fill="#081f32" stroke="#997f44" stroke-width="1.0" class="net-node"/>
+        <circle cx="310" cy="490" r="2.8" fill="#997f44" class="net-node"/>
+        <circle cx="60"  cy="190" r="4"   fill="#1a4f75" stroke="#c8a84b" stroke-width="0.8" stroke-opacity="0.5"/>
+        <circle cx="460" cy="80"  r="3.5" fill="#1a4f75" stroke="#c8a84b" stroke-width="0.8" stroke-opacity="0.5"/>
+        <circle cx="500" cy="360" r="3.5" fill="#1a4f75" stroke="#c8a84b" stroke-width="0.8" stroke-opacity="0.4"/>
+        <circle cx="260" cy="30"  r="3"   fill="#1a4f75" stroke="#c8a84b" stroke-width="0.8" stroke-opacity="0.4"/>
+        <circle r="2.5" fill="#e9cd79" fill-opacity="0.9">
+          <animateMotion dur="3.5s" repeatCount="indefinite" begin="0s"><mpath href="#path-central-nw"/></animateMotion>
+        </circle>
+        <circle r="2" fill="#c8a84b" fill-opacity="0.8">
+          <animateMotion dur="4s" repeatCount="indefinite" begin="1.2s"><mpath href="#path-central-ne"/></animateMotion>
+        </circle>
+        <circle r="2" fill="#e9cd79" fill-opacity="0.7">
+          <animateMotion dur="3s" repeatCount="indefinite" begin="0.6s"><mpath href="#path-central-e"/></animateMotion>
+        </circle>
+        <circle r="1.8" fill="#c8a84b" fill-opacity="0.75">
+          <animateMotion dur="4.5s" repeatCount="indefinite" begin="2s"><mpath href="#path-central-sw"/></animateMotion>
+        </circle>
+        <circle r="1.8" fill="#e9cd79" fill-opacity="0.65">
+          <animateMotion dur="3.8s" repeatCount="indefinite" begin="0.3s"><mpath href="#path-central-n"/></animateMotion>
+        </circle>
+        <path id="path-central-nw" d="M260,280 L110,140" fill="none"/>
+        <path id="path-central-ne" d="M260,280 L390,120" fill="none"/>
+        <path id="path-central-e"  d="M260,280 L440,290" fill="none"/>
+        <path id="path-central-sw" d="M130,400 L260,280" fill="none"/>
+        <path id="path-central-n"  d="M200,80  L260,280" fill="none"/>
+      </svg>
+    </div>
+
+  </div>
+
+  <div class="hero-scroll">
+    <span>Descubrir</span>
+    <div class="scroll-dot"></div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission-strip">
+  <blockquote class="mission-quote reveal" data-i18n="mission_quote">{{ lang.es.mission_quote }}</blockquote>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="sobre">
+  <div class="about-inner">
+    <div class="about-content">
+      <div class="section-eyebrow reveal" data-i18n="about_eyebrow">{{ lang.es.about_eyebrow }}</div>
+      <h2 class="section-title reveal rv1" data-i18n="about_title">{{ lang.es.about_title | safe }}</h2>
+      <p class="section-text reveal rv2" data-i18n="about_p1">{{ lang.es.about_p1 }}</p>
+      <p class="section-text reveal rv3" data-i18n="about_p2">{{ lang.es.about_p2 }}</p>
+      <div class="about-pillars">
+        <div class="pillar reveal rv2">
+          <div class="pillar-title" data-i18n="p1_title">{{ lang.es.p1_title }}</div>
+          <div class="pillar-text" data-i18n="p1_text">{{ lang.es.p1_text }}</div>
+        </div>
+        <div class="pillar reveal rv3">
+          <div class="pillar-title" data-i18n="p2_title">{{ lang.es.p2_title }}</div>
+          <div class="pillar-text" data-i18n="p2_text">{{ lang.es.p2_text }}</div>
+        </div>
+        <div class="pillar reveal rv3">
+          <div class="pillar-title" data-i18n="p3_title">{{ lang.es.p3_title }}</div>
+          <div class="pillar-text" data-i18n="p3_text">{{ lang.es.p3_text }}</div>
+        </div>
+        <div class="pillar reveal rv4">
+          <div class="pillar-title" data-i18n="p4_title">{{ lang.es.p4_title }}</div>
+          <div class="pillar-text" data-i18n="p4_text">{{ lang.es.p4_text }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual">
+      <div class="about-img-wrap">
+        <img src="{{ site.about_image_url }}" alt="{{ site.about_image_alt }}" loading="lazy" onerror="this.parentElement.style.background='#1a4f75'">
+        <div class="about-img-overlay"></div>
+        <div class="about-img-stat">
+          <div class="stat-item">
+            <div class="stat-num">{{ site.stat_countries }}</div>
+            <div class="stat-label" data-i18n="stat1">{{ lang.es.stat1 }}</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">{{ site.stat_languages }}</div>
+            <div class="stat-label" data-i18n="stat2">{{ lang.es.stat2 }}</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">{{ site.stat_ideas }}</div>
+            <div class="stat-label" data-i18n="stat3">{{ lang.es.stat3 }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="areas" id="areas">
+  <div class="areas-inner">
+    <div class="areas-header">
+      <div class="section-eyebrow reveal" data-i18n="areas_eyebrow">{{ lang.es.areas_eyebrow }}</div>
+      <h2 class="section-title reveal rv1" data-i18n="areas_title">{{ lang.es.areas_title }}</h2>
+    </div>
+    <div class="areas-grid">
+      <div class="area-card reveal">
+        <div class="area-num">01</div>
+        <div class="area-title" data-i18n="a1_title">{{ lang.es.a1_title }}</div>
+        <div class="area-text" data-i18n="a1_text">{{ lang.es.a1_text }}</div>
+      </div>
+      <div class="area-card reveal rv1">
+        <div class="area-num">02</div>
+        <div class="area-title" data-i18n="a2_title">{{ lang.es.a2_title }}</div>
+        <div class="area-text" data-i18n="a2_text">{{ lang.es.a2_text }}</div>
+      </div>
+      <div class="area-card reveal rv2">
+        <div class="area-num">03</div>
+        <div class="area-title" data-i18n="a3_title">{{ lang.es.a3_title }}</div>
+        <div class="area-text" data-i18n="a3_text">{{ lang.es.a3_text }}</div>
+      </div>
+      <div class="area-card reveal rv1">
+        <div class="area-num">04</div>
+        <div class="area-title" data-i18n="a4_title">{{ lang.es.a4_title }}</div>
+        <div class="area-text" data-i18n="a4_text">{{ lang.es.a4_text }}</div>
+      </div>
+      <div class="area-card reveal rv2">
+        <div class="area-num">05</div>
+        <div class="area-title" data-i18n="a5_title">{{ lang.es.a5_title }}</div>
+        <div class="area-text" data-i18n="a5_text">{{ lang.es.a5_text }}</div>
+      </div>
+      <div class="area-card reveal rv3">
+        <div class="area-num">06</div>
+        <div class="area-title" data-i18n="a6_title">{{ lang.es.a6_title }}</div>
+        <div class="area-text" data-i18n="a6_text">{{ lang.es.a6_text }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLABORA -->
+<section class="collab" id="colabora">
+  <div class="collab-bg"></div>
+  <div class="collab-inner">
+    <div class="collab-header">
+      <div class="section-eyebrow reveal" data-i18n="collab_eyebrow">{{ lang.es.collab_eyebrow }}</div>
+      <h2 class="section-title reveal rv1" data-i18n="collab_title">{{ lang.es.collab_title }}</h2>
+      <p class="collab-lead reveal rv2" data-i18n="collab_lead">{{ lang.es.collab_lead }}</p>
+    </div>
+    <div class="collab-cards">
+
+      <div class="collab-card reveal rv1">
+        <div class="collab-card-tag" data-i18n="c1_tag">{{ lang.es.c1_tag }}</div>
+        <div class="collab-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="collab-card-title" data-i18n="c1_title">{{ lang.es.c1_title }}</div>
+        <div class="collab-card-text" data-i18n="c1_text">{{ lang.es.c1_text }}</div>
+        <ul class="collab-card-features" data-i18n-list="c1_features">
+          {% for item in lang.es.c1_features %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+        <button class="btn-collab-primary" onclick="openModal('intelectual')">
+          <span data-i18n="c1_btn">{{ lang.es.c1_btn }}</span> <span class="btn-arr">→</span>
+        </button>
+      </div>
+
+      <div class="collab-card reveal rv2">
+        <div class="collab-card-tag" data-i18n="c2_tag">{{ lang.es.c2_tag }}</div>
+        <div class="collab-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="collab-card-title" data-i18n="c2_title">{{ lang.es.c2_title }}</div>
+        <div class="collab-card-text" data-i18n="c2_text">{{ lang.es.c2_text }}</div>
+        <ul class="collab-card-features" data-i18n-list="c2_features">
+          {% for item in lang.es.c2_features %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+        <button class="btn-collab-outline" onclick="openModal('apoyo')">
+          <span data-i18n="c2_btn">{{ lang.es.c2_btn }}</span> <span class="btn-arr">→</span>
+        </button>
+      </div>
+
+    </div>
+    <div class="collab-note reveal rv2">
+      <p>¿Tienes dudas sobre cómo colaborar? <a href="#contacto">Escríbenos directamente</a> o conéctate con nosotros en <a href="{{ site.linkedin }}" target="_blank">LinkedIn</a>. <strong>Todas las solicitudes son revisadas manualmente por el equipo de PASS-A.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL COLABORACIÓN INTELECTUAL -->
+<div class="modal-ov" id="ov-intelectual" onclick="closeModal('intelectual')"></div>
+<div class="modal-box" id="modal-intelectual" role="dialog" aria-modal="true">
+  <div class="modal-header">
+    <span class="modal-tag">Colaboración intelectual</span>
+    <button class="modal-close" onclick="closeModal('intelectual')">✕</button>
+  </div>
+  <div class="modal-title">Aporta tu voz y conocimiento</div>
+  <div class="modal-body">
+    <form id="form-i" onsubmit="submitModal(event,'intelectual')">
+      <div class="field-row">
+        <div class="field-group"><label class="field-label">Nombre completo *</label><input required type="text" class="field-input" placeholder="Tu nombre completo"></div>
+        <div class="field-group"><label class="field-label">Email *</label><input required type="email" class="field-input" placeholder="tu@email.com"></div>
+      </div>
+      <div class="field-row">
+        <div class="field-group">
+          <label class="field-label">Perfil profesional *</label>
+          <select required class="field-input">
+            <option value="">Selecciona tu perfil</option>
+            <option>Académico / Investigador</option>
+            <option>Profesional / Consultor</option>
+            <option>Institución / Organización</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label class="field-label">Área temática *</label>
+          <select required class="field-input">
+            <option value="">Selecciona un área</option>
+            <option>Economía y finanzas</option>
+            <option>Política y gobernanza</option>
+            <option>Derecho y regulación</option>
+            <option>Desarrollo sostenible</option>
+            <option>Tecnología e innovación</option>
+            <option>Relaciones internacionales</option>
+            <option>Otra</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-group"><label class="field-label">Presentación breve *</label><textarea required class="field-input" rows="4" placeholder="Cuéntanos quién eres, en qué te especializas y qué te motiva a colaborar con PASS-A…"></textarea></div>
+      <div class="field-group" style="margin-bottom:28px;"><label class="field-label">LinkedIn / Web profesional</label><input type="url" class="field-input" placeholder="https://linkedin.com/in/…"></div>
+      <button type="submit" class="modal-submit-primary">Enviar solicitud →</button>
+    </form>
+    <div class="modal-success" id="success-intelectual">
+      <div class="modal-success-icon">✓</div>
+      <h3>Solicitud enviada</h3>
+      <p>Hemos recibido tu solicitud. El equipo de PASS-A la revisará y se pondrá en contacto contigo en breve.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL APOYO INSTITUCIONAL -->
+<div class="modal-ov" id="ov-apoyo" onclick="closeModal('apoyo')"></div>
+<div class="modal-box" id="modal-apoyo" role="dialog" aria-modal="true">
+  <div class="modal-header">
+    <span class="modal-tag">Apoyo institucional</span>
+    <button class="modal-close" onclick="closeModal('apoyo')">✕</button>
+  </div>
+  <div class="modal-title">Apoya el proyecto</div>
+  <div class="modal-body">
+    <form id="form-a" onsubmit="submitModal(event,'apoyo')">
+      <div class="field-row">
+        <div class="field-group"><label class="field-label">Nombre / Entidad *</label><input required type="text" class="field-input" placeholder="Tu nombre o nombre de la entidad"></div>
+        <div class="field-group"><label class="field-label">Email de contacto *</label><input required type="email" class="field-input" placeholder="contacto@entidad.com"></div>
+      </div>
+      <div class="field-group">
+        <label class="field-label">Tipo de apoyo que te interesa</label>
+        <div class="field-checkboxes">
+          <label class="field-check-label"><input type="checkbox"> Donación puntual</label>
+          <label class="field-check-label"><input type="checkbox"> Patrocinio de evento</label>
+          <label class="field-check-label"><input type="checkbox"> Alianza estratégica</label>
+          <label class="field-check-label"><input type="checkbox"> Suscripción institucional</label>
+        </div>
+      </div>
+      <div class="field-group"><label class="field-label">Mensaje</label><textarea class="field-input" rows="3" placeholder="Cuéntanos más sobre tu interés en PASS-A…"></textarea></div>
+      <div class="modal-notice">La pasarela de pagos estará activa próximamente. Por ahora, nos pondremos en contacto contigo para coordinar los detalles del apoyo.</div>
+      <button type="submit" class="modal-submit-outline">Enviar mensaje →</button>
+    </form>
+    <div class="modal-success" id="success-apoyo">
+      <div class="modal-success-icon">✓</div>
+      <h3>Mensaje recibido</h3>
+      <p>Gracias por tu interés en apoyar PASS-A. Nos pondremos en contacto contigo para coordinar los próximos pasos.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT CTA -->
+<section class="contact-cta" id="contacto">
+  <div class="contact-cta-inner">
+    <div class="contact-cta-text reveal">
+      <div class="label" data-i18n="contact_label">{{ lang.es.contact_label }}</div>
+      <h3 data-i18n="contact_title">{{ lang.es.contact_title | safe }}</h3>
+    </div>
+    <div class="contact-links reveal rv2">
+      <a href="mailto:{{ site.email }}" class="contact-link-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email
+      </a>
+      <a href="{{ site.linkedin }}" target="_blank" class="contact-link-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg viewBox="0 0 340 85" xmlns="http://www.w3.org/2000/svg" style="height:38px;width:auto;margin-bottom:14px;">
+          <defs><linearGradient id="lgft" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#e9cd79"/><stop offset="55%" stop-color="#c8a84b"/><stop offset="100%" stop-color="#997f44"/></linearGradient></defs>
+          <text x="4" y="58" font-family="Georgia,serif" font-size="64" font-weight="700" fill="#e8f0f7" letter-spacing="-1"><tspan>PASS</tspan><tspan dx="6">-</tspan></text>
+          <text x="220" y="58" font-family="Georgia,serif" font-size="64" font-weight="700" fill="url(#lgft)" letter-spacing="-1">A</text>
+          <text x="4" y="76" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,0.35)" textLength="266" lengthAdjust="spacing">PAN AFRICAN FOR STUDIES AND STRATEGIES ADVISORY</text>
+        </svg>
+        <p data-i18n="footer_tagline">{{ lang.es.footer_tagline }}</p>
+      </div>
+      <div class="footer-nav">
+        <div class="footer-col">
+          <div class="footer-col-title" data-i18n="footer_col1">{{ lang.es.footer_col1 }}</div>
+          <ul>
+            <li><a href="#sobre" data-i18n="nav_sobre">{{ lang.es.nav_sobre }}</a></li>
+            <li><a href="#areas" data-i18n="footer_areas">{{ lang.es.footer_areas }}</a></li>
+            <li><a href="#colabora" data-i18n="nav_colabora">{{ lang.es.nav_colabora }}</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title" data-i18n="footer_col2">{{ lang.es.footer_col2 }}</div>
+          <ul>
+            <li><a href="#" data-i18n="footer_pub">{{ lang.es.footer_pub }}</a></li>
+            <li><a href="#" data-i18n="footer_events">{{ lang.es.footer_events }}</a></li>
+            <li><a href="#" data-i18n="footer_community">{{ lang.es.footer_community }}</a></li>
+            <li><a href="#" data-i18n="footer_sub">{{ lang.es.footer_sub }}</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title" data-i18n="nav_contacto">{{ lang.es.nav_contacto }}</div>
+          <ul>
+            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            <li><a href="{{ site.linkedin }}" target="_blank">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© {{ site.copyright_year }} PASS-A — Pan African for Studies and Strategies Advisory</p>
+      <div class="footer-langs">
+        <button class="f-lang active" data-lang="es">ES</button>
+        <button class="f-lang" data-lang="en">EN</button>
+        <button class="f-lang" data-lang="fr">FR</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const i18n = {
+  es: {{ lang.es | dump | safe }},
+  en: {{ lang.en | dump | safe }},
+  fr: {{ lang.fr | dump | safe }}
+};
+
+let currentLang = 'es';
+
+function setLang(lang) {
+  if (!i18n[lang]) return;
+  currentLang = lang;
+  const t = i18n[lang];
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+
+  document.querySelectorAll('[data-i18n-list]').forEach(el => {
+    const key = el.dataset.i18nList;
+    if (Array.isArray(t[key])) {
+      el.innerHTML = t[key].map(item => `<li>${item}</li>`).join('');
+    }
+  });
+
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('.lang-btn, .f-lang').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+}
+
+/* NAV scroll */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+/* Drawer móvil */
+function openDrawer() {
+  document.getElementById('drawer').classList.add('open');
+  document.getElementById('drawerOv').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+  document.getElementById('drawer').classList.remove('open');
+  document.getElementById('drawerOv').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* Modales */
+function openModal(type) {
+  document.getElementById('ov-' + type).classList.add('open');
+  document.getElementById('modal-' + type).classList.add('open');
+  document.body.style.overflow = 'hidden';
+  const first = document.querySelector('#modal-' + type + ' input, #modal-' + type + ' select');
+  if (first) setTimeout(() => first.focus(), 350);
+}
+function closeModal(type) {
+  document.getElementById('ov-' + type).classList.remove('open');
+  document.getElementById('modal-' + type).classList.remove('open');
+  document.body.style.overflow = '';
+}
+function submitModal(e, type) {
+  e.preventDefault();
+  document.getElementById('form-' + (type === 'intelectual' ? 'i' : 'a')).style.display = 'none';
+  document.getElementById('success-' + type).style.display = 'block';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeModal('intelectual'); closeModal('apoyo'); }
+});
+
+/* Scroll reveal */
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* Selector de idioma */
+document.querySelectorAll('.lang-btn, .f-lang').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const lang = btn.dataset.lang;
+    if (lang) setLang(lang);
+  });
+});
+
+/* Netlify Identity — redirect al admin tras login */
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on('init', user => {
+    if (!user) {
+      window.netlifyIdentity.on('login', () => {
+        document.location.href = '/admin/';
+      });
+    }
+  });
+}
+</script>
+</body>
+</html>

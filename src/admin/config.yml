@@ -1,0 +1,422 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true   # permite editar en local con `npx decap-server`
+
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+
+slug:
+  encoding: ascii
+
+# ══════════════════════════════════════════════════════════════
+# CONFIGURACIÓN GENERAL DEL SITIO
+# ══════════════════════════════════════════════════════════════
+collections:
+
+  - name: "ajustes"
+    label: "⚙️ Ajustes del sitio"
+    files:
+      - name: "site"
+        label: "Configuración general"
+        file: "src/_data/site.yaml"
+        fields:
+          - { label: "Email de contacto", name: "email", widget: "string", hint: "Aparece en la sección de contacto y el footer." }
+          - { label: "URL de LinkedIn", name: "linkedin", widget: "string" }
+          - label: "Estadísticas (sección Sobre)"
+            name: "stats_group"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Nº de países", name: "stat_countries", widget: "string", default: "54" }
+              - { label: "Nº de idiomas", name: "stat_languages", widget: "string", default: "3" }
+              - { label: "Ideas (símbolo)", name: "stat_ideas", widget: "string", default: "∞" }
+          - { label: "Imagen sección Sobre (URL)", name: "about_image_url", widget: "image", hint: "Sube una foto o pega la URL de una imagen externa." }
+          - { label: "Texto alternativo de la imagen", name: "about_image_alt", widget: "string" }
+          - { label: "Año del copyright", name: "copyright_year", widget: "string", default: "2026" }
+
+  # ══════════════════════════════════════════════════════════════
+  # CONTENIDO EN ESPAÑOL
+  # ══════════════════════════════════════════════════════════════
+  - name: "contenido_es"
+    label: "🇪🇸 Contenido — Español"
+    files:
+      - name: "es"
+        label: "Textos en Español"
+        file: "src/_data/lang/es.yaml"
+        fields:
+          # Navegación
+          - label: "Navegación"
+            name: "nav_group"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Enlace: Sobre PASS-A", name: "nav_sobre", widget: "string" }
+              - { label: "Enlace: Áreas", name: "nav_areas", widget: "string" }
+              - { label: "Enlace: Colabora", name: "nav_colabora", widget: "string" }
+              - { label: "Enlace: Contacto", name: "nav_contacto", widget: "string" }
+              - { label: "Botón CTA navbar", name: "nav_cta", widget: "string" }
+          # Hero
+          - label: "Hero (cabecera principal)"
+            name: "hero_group"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Texto eyebrow", name: "hero_eyebrow", widget: "string" }
+              - { label: "Título principal", name: "hero_title", widget: "text", hint: "Puedes usar <br> para saltos de línea y <em>palabra</em> para cursiva dorada." }
+              - { label: "Párrafo introducción", name: "hero_lead", widget: "text" }
+              - { label: "Botón primario (texto)", name: "hero_btn1", widget: "string" }
+              - { label: "Botón secundario (texto)", name: "hero_btn2", widget: "string" }
+          # Misión
+          - { label: "Frase de misión (strip oscuro)", name: "mission_quote", widget: "text" }
+          # Sobre
+          - label: "Sección Sobre PASS-A"
+            name: "about_group"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Eyebrow", name: "about_eyebrow", widget: "string" }
+              - { label: "Título", name: "about_title", widget: "text", hint: "Usa <br> para saltos de línea." }
+              - { label: "Párrafo 1", name: "about_p1", widget: "text" }
+              - { label: "Párrafo 2", name: "about_p2", widget: "text" }
+          # Pilares
+          - label: "Pilares (Misión / Visión / Enfoque / Comunidad)"
+            name: "pillars_group"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Pilar 1 — Título", name: "p1_title", widget: "string" }
+              - { label: "Pilar 1 — Texto", name: "p1_text", widget: "text" }
+              - { label: "Pilar 2 — Título", name: "p2_title", widget: "string" }
+              - { label: "Pilar 2 — Texto", name: "p2_text", widget: "text" }
+              - { label: "Pilar 3 — Título", name: "p3_title", widget: "string" }
+              - { label: "Pilar 3 — Texto", name: "p3_text", widget: "text" }
+              - { label: "Pilar 4 — Título", name: "p4_title", widget: "string" }
+              - { label: "Pilar 4 — Texto", name: "p4_text", widget: "text" }
+          # Stats
+          - label: "Etiquetas de estadísticas"
+            name: "stats_labels_group"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Etiqueta 1", name: "stat1", widget: "string" }
+              - { label: "Etiqueta 2", name: "stat2", widget: "string" }
+              - { label: "Etiqueta 3", name: "stat3", widget: "string" }
+          # Áreas
+          - label: "Sección Áreas de actuación"
+            name: "areas_group"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Eyebrow", name: "areas_eyebrow", widget: "string" }
+              - { label: "Título sección", name: "areas_title", widget: "string" }
+              - { label: "Área 01 — Título", name: "a1_title", widget: "string" }
+              - { label: "Área 01 — Texto", name: "a1_text", widget: "text" }
+              - { label: "Área 02 — Título", name: "a2_title", widget: "string" }
+              - { label: "Área 02 — Texto", name: "a2_text", widget: "text" }
+              - { label: "Área 03 — Título", name: "a3_title", widget: "string" }
+              - { label: "Área 03 — Texto", name: "a3_text", widget: "text" }
+              - { label: "Área 04 — Título", name: "a4_title", widget: "string" }
+              - { label: "Área 04 — Texto", name: "a4_text", widget: "text" }
+              - { label: "Área 05 — Título", name: "a5_title", widget: "string" }
+              - { label: "Área 05 — Texto", name: "a5_text", widget: "text" }
+              - { label: "Área 06 — Título", name: "a6_title", widget: "string" }
+              - { label: "Área 06 — Texto", name: "a6_text", widget: "text" }
+          # Colabora
+          - label: "Sección Colabora"
+            name: "collab_group"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Eyebrow", name: "collab_eyebrow", widget: "string" }
+              - { label: "Título", name: "collab_title", widget: "string" }
+              - { label: "Párrafo introducción", name: "collab_lead", widget: "text" }
+              - { label: "Tarjeta 1 — Etiqueta", name: "c1_tag", widget: "string" }
+              - { label: "Tarjeta 1 — Título", name: "c1_title", widget: "string" }
+              - { label: "Tarjeta 1 — Texto", name: "c1_text", widget: "text" }
+              - label: "Tarjeta 1 — Lista de beneficios"
+                name: "c1_features"
+                widget: "list"
+                field: { label: "Beneficio", name: "item", widget: "string" }
+              - { label: "Tarjeta 1 — Botón (texto)", name: "c1_btn", widget: "string" }
+              - { label: "Tarjeta 2 — Etiqueta", name: "c2_tag", widget: "string" }
+              - { label: "Tarjeta 2 — Título", name: "c2_title", widget: "string" }
+              - { label: "Tarjeta 2 — Texto", name: "c2_text", widget: "text" }
+              - label: "Tarjeta 2 — Lista de beneficios"
+                name: "c2_features"
+                widget: "list"
+                field: { label: "Beneficio", name: "item", widget: "string" }
+              - { label: "Tarjeta 2 — Botón (texto)", name: "c2_btn", widget: "string" }
+          # Contacto
+          - label: "Sección Contacto"
+            name: "contact_group"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Etiqueta superior", name: "contact_label", widget: "string" }
+              - { label: "Título", name: "contact_title", widget: "text", hint: "Usa <br> para saltos de línea." }
+          # Footer
+          - label: "Footer"
+            name: "footer_group"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Tagline", name: "footer_tagline", widget: "text" }
+              - { label: "Columna 1 — Título", name: "footer_col1", widget: "string" }
+              - { label: "Columna 2 — Título", name: "footer_col2", widget: "string" }
+              - { label: "Enlace: Áreas", name: "footer_areas", widget: "string" }
+              - { label: "Enlace: Publicaciones", name: "footer_pub", widget: "string" }
+              - { label: "Enlace: Eventos", name: "footer_events", widget: "string" }
+              - { label: "Enlace: Comunidad", name: "footer_community", widget: "string" }
+              - { label: "Enlace: Suscripción", name: "footer_sub", widget: "string" }
+
+  # ══════════════════════════════════════════════════════════════
+  # CONTENIDO EN INGLÉS
+  # ══════════════════════════════════════════════════════════════
+  - name: "contenido_en"
+    label: "🇬🇧 Content — English"
+    files:
+      - name: "en"
+        label: "Texts in English"
+        file: "src/_data/lang/en.yaml"
+        fields:
+          - label: "Navigation"
+            name: "nav_group"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Link: About PASS-A", name: "nav_sobre", widget: "string" }
+              - { label: "Link: Areas", name: "nav_areas", widget: "string" }
+              - { label: "Link: Collaborate", name: "nav_colabora", widget: "string" }
+              - { label: "Link: Contact", name: "nav_contacto", widget: "string" }
+              - { label: "Navbar CTA button", name: "nav_cta", widget: "string" }
+          - label: "Hero"
+            name: "hero_group"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Eyebrow text", name: "hero_eyebrow", widget: "string" }
+              - { label: "Main title", name: "hero_title", widget: "text", hint: "Use <br> for line breaks and <em>word</em> for gold italic." }
+              - { label: "Lead paragraph", name: "hero_lead", widget: "text" }
+              - { label: "Primary button (text)", name: "hero_btn1", widget: "string" }
+              - { label: "Secondary button (text)", name: "hero_btn2", widget: "string" }
+          - { label: "Mission quote (dark strip)", name: "mission_quote", widget: "text" }
+          - label: "About section"
+            name: "about_group"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Eyebrow", name: "about_eyebrow", widget: "string" }
+              - { label: "Title", name: "about_title", widget: "text" }
+              - { label: "Paragraph 1", name: "about_p1", widget: "text" }
+              - { label: "Paragraph 2", name: "about_p2", widget: "text" }
+          - label: "Pillars"
+            name: "pillars_group"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Pillar 1 — Title", name: "p1_title", widget: "string" }
+              - { label: "Pillar 1 — Text", name: "p1_text", widget: "text" }
+              - { label: "Pillar 2 — Title", name: "p2_title", widget: "string" }
+              - { label: "Pillar 2 — Text", name: "p2_text", widget: "text" }
+              - { label: "Pillar 3 — Title", name: "p3_title", widget: "string" }
+              - { label: "Pillar 3 — Text", name: "p3_text", widget: "text" }
+              - { label: "Pillar 4 — Title", name: "p4_title", widget: "string" }
+              - { label: "Pillar 4 — Text", name: "p4_text", widget: "text" }
+          - label: "Stats labels"
+            name: "stats_labels_group"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Label 1", name: "stat1", widget: "string" }
+              - { label: "Label 2", name: "stat2", widget: "string" }
+              - { label: "Label 3", name: "stat3", widget: "string" }
+          - label: "Areas section"
+            name: "areas_group"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Eyebrow", name: "areas_eyebrow", widget: "string" }
+              - { label: "Section title", name: "areas_title", widget: "string" }
+              - { label: "Area 01 — Title", name: "a1_title", widget: "string" }
+              - { label: "Area 01 — Text", name: "a1_text", widget: "text" }
+              - { label: "Area 02 — Title", name: "a2_title", widget: "string" }
+              - { label: "Area 02 — Text", name: "a2_text", widget: "text" }
+              - { label: "Area 03 — Title", name: "a3_title", widget: "string" }
+              - { label: "Area 03 — Text", name: "a3_text", widget: "text" }
+              - { label: "Area 04 — Title", name: "a4_title", widget: "string" }
+              - { label: "Area 04 — Text", name: "a4_text", widget: "text" }
+              - { label: "Area 05 — Title", name: "a5_title", widget: "string" }
+              - { label: "Area 05 — Text", name: "a5_text", widget: "text" }
+              - { label: "Area 06 — Title", name: "a6_title", widget: "string" }
+              - { label: "Area 06 — Text", name: "a6_text", widget: "text" }
+          - label: "Collaborate section"
+            name: "collab_group"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Eyebrow", name: "collab_eyebrow", widget: "string" }
+              - { label: "Title", name: "collab_title", widget: "string" }
+              - { label: "Lead paragraph", name: "collab_lead", widget: "text" }
+              - { label: "Card 1 — Tag", name: "c1_tag", widget: "string" }
+              - { label: "Card 1 — Title", name: "c1_title", widget: "string" }
+              - { label: "Card 1 — Text", name: "c1_text", widget: "text" }
+              - label: "Card 1 — Features list"
+                name: "c1_features"
+                widget: "list"
+                field: { label: "Feature", name: "item", widget: "string" }
+              - { label: "Card 1 — Button text", name: "c1_btn", widget: "string" }
+              - { label: "Card 2 — Tag", name: "c2_tag", widget: "string" }
+              - { label: "Card 2 — Title", name: "c2_title", widget: "string" }
+              - { label: "Card 2 — Text", name: "c2_text", widget: "text" }
+              - label: "Card 2 — Features list"
+                name: "c2_features"
+                widget: "list"
+                field: { label: "Feature", name: "item", widget: "string" }
+              - { label: "Card 2 — Button text", name: "c2_btn", widget: "string" }
+          - label: "Contact section"
+            name: "contact_group"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Label", name: "contact_label", widget: "string" }
+              - { label: "Title", name: "contact_title", widget: "text" }
+          - label: "Footer"
+            name: "footer_group"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Tagline", name: "footer_tagline", widget: "text" }
+              - { label: "Column 1 — Title", name: "footer_col1", widget: "string" }
+              - { label: "Column 2 — Title", name: "footer_col2", widget: "string" }
+              - { label: "Link: Areas", name: "footer_areas", widget: "string" }
+              - { label: "Link: Publications", name: "footer_pub", widget: "string" }
+              - { label: "Link: Events", name: "footer_events", widget: "string" }
+              - { label: "Link: Community", name: "footer_community", widget: "string" }
+              - { label: "Link: Subscription", name: "footer_sub", widget: "string" }
+
+  # ══════════════════════════════════════════════════════════════
+  # CONTENIDO EN FRANCÉS
+  # ══════════════════════════════════════════════════════════════
+  - name: "contenido_fr"
+    label: "🇫🇷 Contenu — Français"
+    files:
+      - name: "fr"
+        label: "Textes en Français"
+        file: "src/_data/lang/fr.yaml"
+        fields:
+          - label: "Navigation"
+            name: "nav_group"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Lien: À propos", name: "nav_sobre", widget: "string" }
+              - { label: "Lien: Domaines", name: "nav_areas", widget: "string" }
+              - { label: "Lien: Collaborer", name: "nav_colabora", widget: "string" }
+              - { label: "Lien: Contact", name: "nav_contacto", widget: "string" }
+              - { label: "Bouton CTA navbar", name: "nav_cta", widget: "string" }
+          - label: "Hero"
+            name: "hero_group"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Texte eyebrow", name: "hero_eyebrow", widget: "string" }
+              - { label: "Titre principal", name: "hero_title", widget: "text", hint: "Utilisez <br> pour les sauts de ligne et <em>mot</em> pour l'italique doré." }
+              - { label: "Paragraphe d'introduction", name: "hero_lead", widget: "text" }
+              - { label: "Bouton primaire (texte)", name: "hero_btn1", widget: "string" }
+              - { label: "Bouton secondaire (texte)", name: "hero_btn2", widget: "string" }
+          - { label: "Citation de mission (bande sombre)", name: "mission_quote", widget: "text" }
+          - label: "Section À propos"
+            name: "about_group"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Eyebrow", name: "about_eyebrow", widget: "string" }
+              - { label: "Titre", name: "about_title", widget: "text" }
+              - { label: "Paragraphe 1", name: "about_p1", widget: "text" }
+              - { label: "Paragraphe 2", name: "about_p2", widget: "text" }
+          - label: "Piliers"
+            name: "pillars_group"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Pilier 1 — Titre", name: "p1_title", widget: "string" }
+              - { label: "Pilier 1 — Texte", name: "p1_text", widget: "text" }
+              - { label: "Pilier 2 — Titre", name: "p2_title", widget: "string" }
+              - { label: "Pilier 2 — Texte", name: "p2_text", widget: "text" }
+              - { label: "Pilier 3 — Titre", name: "p3_title", widget: "string" }
+              - { label: "Pilier 3 — Texte", name: "p3_text", widget: "text" }
+              - { label: "Pilier 4 — Titre", name: "p4_title", widget: "string" }
+              - { label: "Pilier 4 — Texte", name: "p4_text", widget: "text" }
+          - label: "Étiquettes statistiques"
+            name: "stats_labels_group"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Étiquette 1", name: "stat1", widget: "string" }
+              - { label: "Étiquette 2", name: "stat2", widget: "string" }
+              - { label: "Étiquette 3", name: "stat3", widget: "string" }
+          - label: "Section Domaines d'action"
+            name: "areas_group"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Eyebrow", name: "areas_eyebrow", widget: "string" }
+              - { label: "Titre de section", name: "areas_title", widget: "string" }
+              - { label: "Domaine 01 — Titre", name: "a1_title", widget: "string" }
+              - { label: "Domaine 01 — Texte", name: "a1_text", widget: "text" }
+              - { label: "Domaine 02 — Titre", name: "a2_title", widget: "string" }
+              - { label: "Domaine 02 — Texte", name: "a2_text", widget: "text" }
+              - { label: "Domaine 03 — Titre", name: "a3_title", widget: "string" }
+              - { label: "Domaine 03 — Texte", name: "a3_text", widget: "text" }
+              - { label: "Domaine 04 — Titre", name: "a4_title", widget: "string" }
+              - { label: "Domaine 04 — Texte", name: "a4_text", widget: "text" }
+              - { label: "Domaine 05 — Titre", name: "a5_title", widget: "string" }
+              - { label: "Domaine 05 — Texte", name: "a5_text", widget: "text" }
+              - { label: "Domaine 06 — Titre", name: "a6_title", widget: "string" }
+              - { label: "Domaine 06 — Texte", name: "a6_text", widget: "text" }
+          - label: "Section Collaborer"
+            name: "collab_group"
+            widget: "object"
+            collapsed: false
+            fields:
+              - { label: "Eyebrow", name: "collab_eyebrow", widget: "string" }
+              - { label: "Titre", name: "collab_title", widget: "string" }
+              - { label: "Paragraphe d'introduction", name: "collab_lead", widget: "text" }
+              - { label: "Carte 1 — Étiquette", name: "c1_tag", widget: "string" }
+              - { label: "Carte 1 — Titre", name: "c1_title", widget: "string" }
+              - { label: "Carte 1 — Texte", name: "c1_text", widget: "text" }
+              - label: "Carte 1 — Liste des avantages"
+                name: "c1_features"
+                widget: "list"
+                field: { label: "Avantage", name: "item", widget: "string" }
+              - { label: "Carte 1 — Bouton (texte)", name: "c1_btn", widget: "string" }
+              - { label: "Carte 2 — Étiquette", name: "c2_tag", widget: "string" }
+              - { label: "Carte 2 — Titre", name: "c2_title", widget: "string" }
+              - { label: "Carte 2 — Texte", name: "c2_text", widget: "text" }
+              - label: "Carte 2 — Liste des avantages"
+                name: "c2_features"
+                widget: "list"
+                field: { label: "Avantage", name: "item", widget: "string" }
+              - { label: "Carte 2 — Bouton (texte)", name: "c2_btn", widget: "string" }
+          - label: "Section Contact"
+            name: "contact_group"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Étiquette", name: "contact_label", widget: "string" }
+              - { label: "Titre", name: "contact_title", widget: "text" }
+          - label: "Footer"
+            name: "footer_group"
+            widget: "object"
+            collapsed: true
+            fields:
+              - { label: "Tagline", name: "footer_tagline", widget: "text" }
+              - { label: "Colonne 1 — Titre", name: "footer_col1", widget: "string" }
+              - { label: "Colonne 2 — Titre", name: "footer_col2", widget: "string" }
+              - { label: "Lien: Domaines", name: "footer_areas", widget: "string" }
+              - { label: "Lien: Publications", name: "footer_pub", widget: "string" }
+              - { label: "Lien: Événements", name: "footer_events", widget: "string" }
+              - { label: "Lien: Communauté", name: "footer_community", widget: "string" }
+              - { label: "Lien: Abonnement", name: "footer_sub", widget: "string" }
