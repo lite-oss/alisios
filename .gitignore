@@ -1,2 +1,5 @@
 node_modules/
 _site/
+dist/
+tina/__generated__
+.tina/__generated__

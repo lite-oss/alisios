@@ -4,12 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
+    "dev": "tinacms dev -c \"astro dev\"",
+    "build": "tinacms build && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
     "astro": "^4.16.0",
-    "@rollup/plugin-yaml": "^4.1.2"
+    "tinacms": "^2.6.0",
+    "@tinacms/cli": "^1.6.0"
   }
 }
