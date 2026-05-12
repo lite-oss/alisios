@@ -1,5 +1,6 @@
 node_modules/
 _site/
 dist/
+.astro/
 tina/__generated__
 .tina/__generated__
