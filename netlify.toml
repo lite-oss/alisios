@@ -1,14 +1,10 @@
 [build]
   command   = "npm run build"
-  publish   = "_site"
+  publish   = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
 
-[[plugins]]
-  package = "@netlify/plugin-sitemap"
-
-# Netlify Identity — requerido para Decap CMS
 [[headers]]
   for = "/*"
   [headers.values]

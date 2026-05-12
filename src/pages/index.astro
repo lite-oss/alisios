@@ -1,3 +1,10 @@
+---
+import es from '../_data/lang/es.yaml';
+import en from '../_data/lang/en.yaml';
+import fr from '../_data/lang/fr.yaml';
+import site from '../_data/site.yaml';
+---
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PASS-A — Pan African for Studies and Strategies Advisory</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/styles.css">
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
@@ -21,10 +28,10 @@
     </svg>
   </a>
   <ul class="nav-links">
-    <li><a class="nav-link" href="#sobre" data-i18n="nav_sobre">{{ lang.es.nav_sobre }}</a></li>
-    <li><a class="nav-link" href="#areas" data-i18n="nav_areas">{{ lang.es.nav_areas }}</a></li>
-    <li><a class="nav-link" href="#colabora" data-i18n="nav_colabora">{{ lang.es.nav_colabora }}</a></li>
-    <li><a class="nav-link" href="#contacto" data-i18n="nav_contacto">{{ lang.es.nav_contacto }}</a></li>
+    <li><a class="nav-link" href="#sobre" data-i18n="nav_sobre">{es.nav_sobre}</a></li>
+    <li><a class="nav-link" href="#areas" data-i18n="nav_areas">{es.nav_areas}</a></li>
+    <li><a class="nav-link" href="#colabora" data-i18n="nav_colabora">{es.nav_colabora}</a></li>
+    <li><a class="nav-link" href="#contacto" data-i18n="nav_contacto">{es.nav_contacto}</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:16px;">
     <div class="nav-lang">
@@ -33,7 +40,7 @@
       <button class="lang-btn" data-lang="fr">FR</button>
     </div>
     <button class="nav-cta" onclick="openModal('intelectual')">
-      <span data-i18n="nav_cta">{{ lang.es.nav_cta }}</span>
+      <span data-i18n="nav_cta">{es.nav_cta}</span>
     </button>
   </div>
   <div class="hamburger" id="hamburger" onclick="openDrawer()">
@@ -45,10 +52,10 @@
 <div class="drawer-ov" id="drawerOv" onclick="closeDrawer()"></div>
 <div class="drawer" id="drawer">
   <button class="drawer-x" onclick="closeDrawer()">✕</button>
-  <a class="drawer-link" href="#sobre" onclick="closeDrawer()" data-i18n="nav_sobre">{{ lang.es.nav_sobre }}</a>
-  <a class="drawer-link" href="#areas" onclick="closeDrawer()" data-i18n="nav_areas">{{ lang.es.nav_areas }}</a>
-  <a class="drawer-link" href="#colabora" onclick="closeDrawer()" data-i18n="nav_colabora">{{ lang.es.nav_colabora }}</a>
-  <a class="drawer-link" href="#contacto" onclick="closeDrawer()" data-i18n="nav_contacto">{{ lang.es.nav_contacto }}</a>
+  <a class="drawer-link" href="#sobre" onclick="closeDrawer()" data-i18n="nav_sobre">{es.nav_sobre}</a>
+  <a class="drawer-link" href="#areas" onclick="closeDrawer()" data-i18n="nav_areas">{es.nav_areas}</a>
+  <a class="drawer-link" href="#colabora" onclick="closeDrawer()" data-i18n="nav_colabora">{es.nav_colabora}</a>
+  <a class="drawer-link" href="#contacto" onclick="closeDrawer()" data-i18n="nav_contacto">{es.nav_contacto}</a>
 </div>
 
 <!-- HERO -->
@@ -59,15 +66,15 @@
   <div class="hero-inner hero-inner--split">
 
     <div class="hero-text">
-      <div class="hero-eyebrow" data-i18n="hero_eyebrow">{{ lang.es.hero_eyebrow }}</div>
-      <h1 class="hero-title" data-i18n="hero_title">{{ lang.es.hero_title | safe }}</h1>
-      <p class="hero-lead" data-i18n="hero_lead">{{ lang.es.hero_lead }}</p>
+      <div class="hero-eyebrow" data-i18n="hero_eyebrow">{es.hero_eyebrow}</div>
+      <h1 class="hero-title" data-i18n="hero_title" set:html={es.hero_title}></h1>
+      <p class="hero-lead" data-i18n="hero_lead">{es.hero_lead}</p>
       <div class="hero-actions">
         <button class="btn-primary" onclick="openModal('intelectual')">
-          <span data-i18n="hero_btn1">{{ lang.es.hero_btn1 }}</span> <span class="arr">→</span>
+          <span data-i18n="hero_btn1">{es.hero_btn1}</span> <span class="arr">→</span>
         </button>
         <a href="#sobre" class="btn-secondary">
-          <span data-i18n="hero_btn2">{{ lang.es.hero_btn2 }}</span>
+          <span data-i18n="hero_btn2">{es.hero_btn2}</span>
         </a>
       </div>
     </div>
@@ -177,52 +184,52 @@
 
 <!-- MISSION -->
 <section class="mission-strip">
-  <blockquote class="mission-quote reveal" data-i18n="mission_quote">{{ lang.es.mission_quote }}</blockquote>
+  <blockquote class="mission-quote reveal" data-i18n="mission_quote">{es.mission_quote}</blockquote>
 </section>
 
 <!-- ABOUT -->
 <section class="about" id="sobre">
   <div class="about-inner">
     <div class="about-content">
-      <div class="section-eyebrow reveal" data-i18n="about_eyebrow">{{ lang.es.about_eyebrow }}</div>
-      <h2 class="section-title reveal rv1" data-i18n="about_title">{{ lang.es.about_title | safe }}</h2>
-      <p class="section-text reveal rv2" data-i18n="about_p1">{{ lang.es.about_p1 }}</p>
-      <p class="section-text reveal rv3" data-i18n="about_p2">{{ lang.es.about_p2 }}</p>
+      <div class="section-eyebrow reveal" data-i18n="about_eyebrow">{es.about_eyebrow}</div>
+      <h2 class="section-title reveal rv1" data-i18n="about_title" set:html={es.about_title}></h2>
+      <p class="section-text reveal rv2" data-i18n="about_p1">{es.about_p1}</p>
+      <p class="section-text reveal rv3" data-i18n="about_p2">{es.about_p2}</p>
       <div class="about-pillars">
         <div class="pillar reveal rv2">
-          <div class="pillar-title" data-i18n="p1_title">{{ lang.es.p1_title }}</div>
-          <div class="pillar-text" data-i18n="p1_text">{{ lang.es.p1_text }}</div>
+          <div class="pillar-title" data-i18n="p1_title">{es.p1_title}</div>
+          <div class="pillar-text" data-i18n="p1_text">{es.p1_text}</div>
         </div>
         <div class="pillar reveal rv3">
-          <div class="pillar-title" data-i18n="p2_title">{{ lang.es.p2_title }}</div>
-          <div class="pillar-text" data-i18n="p2_text">{{ lang.es.p2_text }}</div>
+          <div class="pillar-title" data-i18n="p2_title">{es.p2_title}</div>
+          <div class="pillar-text" data-i18n="p2_text">{es.p2_text}</div>
         </div>
         <div class="pillar reveal rv3">
-          <div class="pillar-title" data-i18n="p3_title">{{ lang.es.p3_title }}</div>
-          <div class="pillar-text" data-i18n="p3_text">{{ lang.es.p3_text }}</div>
+          <div class="pillar-title" data-i18n="p3_title">{es.p3_title}</div>
+          <div class="pillar-text" data-i18n="p3_text">{es.p3_text}</div>
         </div>
         <div class="pillar reveal rv4">
-          <div class="pillar-title" data-i18n="p4_title">{{ lang.es.p4_title }}</div>
-          <div class="pillar-text" data-i18n="p4_text">{{ lang.es.p4_text }}</div>
+          <div class="pillar-title" data-i18n="p4_title">{es.p4_title}</div>
+          <div class="pillar-text" data-i18n="p4_text">{es.p4_text}</div>
         </div>
       </div>
     </div>
     <div class="about-visual">
       <div class="about-img-wrap">
-        <img src="{{ site.about_image_url }}" alt="{{ site.about_image_alt }}" loading="lazy" onerror="this.parentElement.style.background='#1a4f75'">
+        <img src={site.about_image_url} alt={site.about_image_alt} loading="lazy" onerror="this.parentElement.style.background='#1a4f75'">
         <div class="about-img-overlay"></div>
         <div class="about-img-stat">
           <div class="stat-item">
-            <div class="stat-num">{{ site.stat_countries }}</div>
-            <div class="stat-label" data-i18n="stat1">{{ lang.es.stat1 }}</div>
+            <div class="stat-num">{site.stat_countries}</div>
+            <div class="stat-label" data-i18n="stat1">{es.stat1}</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">{{ site.stat_languages }}</div>
-            <div class="stat-label" data-i18n="stat2">{{ lang.es.stat2 }}</div>
+            <div class="stat-num">{site.stat_languages}</div>
+            <div class="stat-label" data-i18n="stat2">{es.stat2}</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">{{ site.stat_ideas }}</div>
-            <div class="stat-label" data-i18n="stat3">{{ lang.es.stat3 }}</div>
+            <div class="stat-num">{site.stat_ideas}</div>
+            <div class="stat-label" data-i18n="stat3">{es.stat3}</div>
           </div>
         </div>
       </div>
@@ -234,39 +241,39 @@
 <section class="areas" id="areas">
   <div class="areas-inner">
     <div class="areas-header">
-      <div class="section-eyebrow reveal" data-i18n="areas_eyebrow">{{ lang.es.areas_eyebrow }}</div>
-      <h2 class="section-title reveal rv1" data-i18n="areas_title">{{ lang.es.areas_title }}</h2>
+      <div class="section-eyebrow reveal" data-i18n="areas_eyebrow">{es.areas_eyebrow}</div>
+      <h2 class="section-title reveal rv1" data-i18n="areas_title">{es.areas_title}</h2>
     </div>
     <div class="areas-grid">
       <div class="area-card reveal">
         <div class="area-num">01</div>
-        <div class="area-title" data-i18n="a1_title">{{ lang.es.a1_title }}</div>
-        <div class="area-text" data-i18n="a1_text">{{ lang.es.a1_text }}</div>
+        <div class="area-title" data-i18n="a1_title">{es.a1_title}</div>
+        <div class="area-text"  data-i18n="a1_text">{es.a1_text}</div>
       </div>
       <div class="area-card reveal rv1">
         <div class="area-num">02</div>
-        <div class="area-title" data-i18n="a2_title">{{ lang.es.a2_title }}</div>
-        <div class="area-text" data-i18n="a2_text">{{ lang.es.a2_text }}</div>
+        <div class="area-title" data-i18n="a2_title">{es.a2_title}</div>
+        <div class="area-text"  data-i18n="a2_text">{es.a2_text}</div>
       </div>
       <div class="area-card reveal rv2">
         <div class="area-num">03</div>
-        <div class="area-title" data-i18n="a3_title">{{ lang.es.a3_title }}</div>
-        <div class="area-text" data-i18n="a3_text">{{ lang.es.a3_text }}</div>
+        <div class="area-title" data-i18n="a3_title">{es.a3_title}</div>
+        <div class="area-text"  data-i18n="a3_text">{es.a3_text}</div>
       </div>
       <div class="area-card reveal rv1">
         <div class="area-num">04</div>
-        <div class="area-title" data-i18n="a4_title">{{ lang.es.a4_title }}</div>
-        <div class="area-text" data-i18n="a4_text">{{ lang.es.a4_text }}</div>
+        <div class="area-title" data-i18n="a4_title">{es.a4_title}</div>
+        <div class="area-text"  data-i18n="a4_text">{es.a4_text}</div>
       </div>
       <div class="area-card reveal rv2">
         <div class="area-num">05</div>
-        <div class="area-title" data-i18n="a5_title">{{ lang.es.a5_title }}</div>
-        <div class="area-text" data-i18n="a5_text">{{ lang.es.a5_text }}</div>
+        <div class="area-title" data-i18n="a5_title">{es.a5_title}</div>
+        <div class="area-text"  data-i18n="a5_text">{es.a5_text}</div>
       </div>
       <div class="area-card reveal rv3">
         <div class="area-num">06</div>
-        <div class="area-title" data-i18n="a6_title">{{ lang.es.a6_title }}</div>
-        <div class="area-text" data-i18n="a6_text">{{ lang.es.a6_text }}</div>
+        <div class="area-title" data-i18n="a6_title">{es.a6_title}</div>
+        <div class="area-text"  data-i18n="a6_text">{es.a6_text}</div>
       </div>
     </div>
   </div>
@@ -277,49 +284,45 @@
   <div class="collab-bg"></div>
   <div class="collab-inner">
     <div class="collab-header">
-      <div class="section-eyebrow reveal" data-i18n="collab_eyebrow">{{ lang.es.collab_eyebrow }}</div>
-      <h2 class="section-title reveal rv1" data-i18n="collab_title">{{ lang.es.collab_title }}</h2>
-      <p class="collab-lead reveal rv2" data-i18n="collab_lead">{{ lang.es.collab_lead }}</p>
+      <div class="section-eyebrow reveal" data-i18n="collab_eyebrow">{es.collab_eyebrow}</div>
+      <h2 class="section-title reveal rv1" data-i18n="collab_title">{es.collab_title}</h2>
+      <p class="collab-lead reveal rv2" data-i18n="collab_lead">{es.collab_lead}</p>
     </div>
     <div class="collab-cards">
 
       <div class="collab-card reveal rv1">
-        <div class="collab-card-tag" data-i18n="c1_tag">{{ lang.es.c1_tag }}</div>
+        <div class="collab-card-tag" data-i18n="c1_tag">{es.c1_tag}</div>
         <div class="collab-card-icon">
           <svg viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <div class="collab-card-title" data-i18n="c1_title">{{ lang.es.c1_title }}</div>
-        <div class="collab-card-text" data-i18n="c1_text">{{ lang.es.c1_text }}</div>
+        <div class="collab-card-title" data-i18n="c1_title">{es.c1_title}</div>
+        <div class="collab-card-text"  data-i18n="c1_text">{es.c1_text}</div>
         <ul class="collab-card-features" data-i18n-list="c1_features">
-          {% for item in lang.es.c1_features %}
-          <li>{{ item }}</li>
-          {% endfor %}
+          {es.c1_features.map(item => <li>{item}</li>)}
         </ul>
         <button class="btn-collab-primary" onclick="openModal('intelectual')">
-          <span data-i18n="c1_btn">{{ lang.es.c1_btn }}</span> <span class="btn-arr">→</span>
+          <span data-i18n="c1_btn">{es.c1_btn}</span> <span class="btn-arr">→</span>
         </button>
       </div>
 
       <div class="collab-card reveal rv2">
-        <div class="collab-card-tag" data-i18n="c2_tag">{{ lang.es.c2_tag }}</div>
+        <div class="collab-card-tag" data-i18n="c2_tag">{es.c2_tag}</div>
         <div class="collab-card-icon">
           <svg viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
-        <div class="collab-card-title" data-i18n="c2_title">{{ lang.es.c2_title }}</div>
-        <div class="collab-card-text" data-i18n="c2_text">{{ lang.es.c2_text }}</div>
+        <div class="collab-card-title" data-i18n="c2_title">{es.c2_title}</div>
+        <div class="collab-card-text"  data-i18n="c2_text">{es.c2_text}</div>
         <ul class="collab-card-features" data-i18n-list="c2_features">
-          {% for item in lang.es.c2_features %}
-          <li>{{ item }}</li>
-          {% endfor %}
+          {es.c2_features.map(item => <li>{item}</li>)}
         </ul>
         <button class="btn-collab-outline" onclick="openModal('apoyo')">
-          <span data-i18n="c2_btn">{{ lang.es.c2_btn }}</span> <span class="btn-arr">→</span>
+          <span data-i18n="c2_btn">{es.c2_btn}</span> <span class="btn-arr">→</span>
         </button>
       </div>
 
     </div>
     <div class="collab-note reveal rv2">
-      <p>¿Tienes dudas sobre cómo colaborar? <a href="#contacto">Escríbenos directamente</a> o conéctate con nosotros en <a href="{{ site.linkedin }}" target="_blank">LinkedIn</a>. <strong>Todas las solicitudes son revisadas manualmente por el equipo de PASS-A.</strong></p>
+      <p>¿Tienes dudas sobre cómo colaborar? <a href="#contacto">Escríbenos directamente</a> o conéctate con nosotros en <a href={site.linkedin} target="_blank">LinkedIn</a>. <strong>Todas las solicitudes son revisadas manualmente por el equipo de PASS-A.</strong></p>
     </div>
   </div>
 </section>
@@ -414,15 +417,15 @@
 <section class="contact-cta" id="contacto">
   <div class="contact-cta-inner">
     <div class="contact-cta-text reveal">
-      <div class="label" data-i18n="contact_label">{{ lang.es.contact_label }}</div>
-      <h3 data-i18n="contact_title">{{ lang.es.contact_title | safe }}</h3>
+      <div class="label" data-i18n="contact_label">{es.contact_label}</div>
+      <h3 data-i18n="contact_title" set:html={es.contact_title}></h3>
     </div>
     <div class="contact-links reveal rv2">
-      <a href="mailto:{{ site.email }}" class="contact-link-btn">
+      <a href={`mailto:${site.email}`} class="contact-link-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         Email
       </a>
-      <a href="{{ site.linkedin }}" target="_blank" class="contact-link-btn">
+      <a href={site.linkedin} target="_blank" class="contact-link-btn">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
@@ -441,37 +444,37 @@
           <text x="220" y="58" font-family="Georgia,serif" font-size="64" font-weight="700" fill="url(#lgft)" letter-spacing="-1">A</text>
           <text x="4" y="76" font-family="Arial,sans-serif" font-size="7" fill="rgba(255,255,255,0.35)" textLength="266" lengthAdjust="spacing">PAN AFRICAN FOR STUDIES AND STRATEGIES ADVISORY</text>
         </svg>
-        <p data-i18n="footer_tagline">{{ lang.es.footer_tagline }}</p>
+        <p data-i18n="footer_tagline">{es.footer_tagline}</p>
       </div>
       <div class="footer-nav">
         <div class="footer-col">
-          <div class="footer-col-title" data-i18n="footer_col1">{{ lang.es.footer_col1 }}</div>
+          <div class="footer-col-title" data-i18n="footer_col1">{es.footer_col1}</div>
           <ul>
-            <li><a href="#sobre" data-i18n="nav_sobre">{{ lang.es.nav_sobre }}</a></li>
-            <li><a href="#areas" data-i18n="footer_areas">{{ lang.es.footer_areas }}</a></li>
-            <li><a href="#colabora" data-i18n="nav_colabora">{{ lang.es.nav_colabora }}</a></li>
+            <li><a href="#sobre"    data-i18n="nav_sobre">{es.nav_sobre}</a></li>
+            <li><a href="#areas"    data-i18n="footer_areas">{es.footer_areas}</a></li>
+            <li><a href="#colabora" data-i18n="nav_colabora">{es.nav_colabora}</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <div class="footer-col-title" data-i18n="footer_col2">{{ lang.es.footer_col2 }}</div>
+          <div class="footer-col-title" data-i18n="footer_col2">{es.footer_col2}</div>
           <ul>
-            <li><a href="#" data-i18n="footer_pub">{{ lang.es.footer_pub }}</a></li>
-            <li><a href="#" data-i18n="footer_events">{{ lang.es.footer_events }}</a></li>
-            <li><a href="#" data-i18n="footer_community">{{ lang.es.footer_community }}</a></li>
-            <li><a href="#" data-i18n="footer_sub">{{ lang.es.footer_sub }}</a></li>
+            <li><a href="#" data-i18n="footer_pub">{es.footer_pub}</a></li>
+            <li><a href="#" data-i18n="footer_events">{es.footer_events}</a></li>
+            <li><a href="#" data-i18n="footer_community">{es.footer_community}</a></li>
+            <li><a href="#" data-i18n="footer_sub">{es.footer_sub}</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <div class="footer-col-title" data-i18n="nav_contacto">{{ lang.es.nav_contacto }}</div>
+          <div class="footer-col-title" data-i18n="nav_contacto">{es.nav_contacto}</div>
           <ul>
-            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            <li><a href="{{ site.linkedin }}" target="_blank">LinkedIn</a></li>
+            <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+            <li><a href={site.linkedin} target="_blank">LinkedIn</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© {{ site.copyright_year }} PASS-A — Pan African for Studies and Strategies Advisory</p>
+      <p>© {site.copyright_year} PASS-A — Pan African for Studies and Strategies Advisory</p>
       <div class="footer-langs">
         <button class="f-lang active" data-lang="es">ES</button>
         <button class="f-lang" data-lang="en">EN</button>
@@ -481,12 +484,8 @@
   </div>
 </footer>
 
-<script>
-const i18n = {
-  es: {{ lang.es | dump | safe }},
-  en: {{ lang.en | dump | safe }},
-  fr: {{ lang.fr | dump | safe }}
-};
+<script is:inline define:vars={{ es, en, fr }}>
+const i18n = { es, en, fr };
 
 let currentLang = 'es';
 
@@ -579,5 +578,6 @@ if (window.netlifyIdentity) {
   });
 }
 </script>
+
 </body>
 </html>

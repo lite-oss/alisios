@@ -4,8 +4,8 @@ backend:
 
 local_backend: true   # permite editar en local con `npx decap-server`
 
-media_folder: "src/assets/uploads"
-public_folder: "/assets/uploads"
+media_folder: "public/uploads"
+public_folder: "/uploads"
 
 slug:
   encoding: ascii
